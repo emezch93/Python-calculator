@@ -1,0 +1,40 @@
+def simplecalculator():
+    name = input("Enter your name: ")
+    print(f"Hello! {name}, let us run some calculations.")
+    
+    operator = input("Enter any operator you want to use (+, -, *, %, sqrt, ^, /): ")
+
+    if operator == "√" or operator.lower() == "sqrt":
+        num1 = float(input("Enter the number to find the square root of: "))
+        # sqrt uses only one number
+        if num1 < 0:
+            print("Cannot calculate square root of a negative number.")
+            return
+        result = num1 ** 0.5
+        print(f"{operator} {num1} = {result}")
+    else:
+        num1 = float(input("Enter the first number for the calculation: "))
+        num2 = float(input("Enter the second number: "))
+
+        if operator == '+':
+            result = num1 + num2
+        elif operator == '-':
+            result = num1 - num2
+        elif operator == '*':
+            result = num1 * num2
+        elif operator == '%':
+            result = num1 % num2
+        elif operator == '^':
+            result = num1 ** num2
+        elif operator == '/':
+            if num2 == 0:
+                print("Cannot divide by zero.")
+                return
+            result = num1 / num2
+        else:
+            print("Invalid operator.")
+            return
+
+        print(f"{num1} {operator} {num2} = {result}")
+
+simplecalculator()
